@@ -28,11 +28,10 @@ class AppAsset extends AssetBundle
       'css/style.css',
     ];
     public $js = [
-      'https://code.jquery.com/jquery-3.3.1.slim.min.js',
       'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js',
-      'js/accordion.js',
-      'js/cookie.js',
       'js/script.js',
+      'js/jquery.accordion.js',
+      'js/jquery.cookie.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

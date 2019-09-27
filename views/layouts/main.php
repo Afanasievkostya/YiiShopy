@@ -30,10 +30,10 @@ AppAsset::register($this);
             <nav class="nav-top">
                <ul class="nav-top--left">
                   <li class="nav-item">
-                     <div class="mail"><img src="img/Mail.png" alt="mail"><span class="mail-text">info@shopy.com</span></div>
+                     <div class="mail"><img src="/img/Mail.png" alt="mail"><span class="mail-text">info@shopy.com</span></div>
                   </li>
                   <li class="nav-item">
-                     <div class="tel"><img src="img/Phone.png" alt="tel"><span class="tel-text">453-5553-996</span></div>
+                     <div class="tel"><img src="/img/Phone.png" alt="tel"><span class="tel-text">453-5553-996</span></div>
                   </li>
                </ul>
                <div class="nav-social">
@@ -56,7 +56,7 @@ AppAsset::register($this);
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <a class="navbar-brand" href="index.php">
                   <div class="navbar-logo">
-                     <p class="navbar-logo--text1">SH<img src="img/Ellipse.png" width="34" height="17" alt="logo">PY</p>
+                     <p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p>
                      <p class="navbar-logo--text2">shope any where</p>
                   </div>
                </a>
@@ -66,10 +66,10 @@ AppAsset::register($this);
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <?= Html::a('Home', ['site/index'], ['class'=>'nav-link'])?>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <?= Html::a('Products', ['category/product'], ['class'=>'nav-link'])?>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#">Hot Deals</a>
@@ -95,9 +95,9 @@ AppAsset::register($this);
                            </div>
                         </div>
                      </li>
-                     <li class="nav-right--item"><a href="#"><img src="img/User.png" alt="вход"></a></li>
+                     <li class="nav-right--item"><a href="#"><img src="/img/User.png" alt="вход"></a></li>
                      <li class="nav-right--item">
-                     <a href="/favourites.php?="><img src="img/Like.png" alt=""></a>
+                     <a href="/favourites.php?="><img src="/img/Like.png" alt=""></a>
                       </li>
                      <li class="nav-right--item nav-right--item__prace">
                         <div class="cart-prace">
@@ -105,7 +105,7 @@ AppAsset::register($this);
                            <p><?= $sum; ?></p>
                           <?php endif; ?>
                         </div>
-                        <a href="cart.php?="><img src="img/Cart.png" alt="карзина"></a>
+                        <a href="cart.php?="><img src="/img/Cart.png" alt="карзина"></a>
 
                      </li>
                   </ul>
@@ -122,7 +122,7 @@ AppAsset::register($this);
                <div class="col col-12 col-md-5 col-lg-4">
                   <a class="navbar-brand" href="#">
                      <div class="navbar-logo">
-                        <p class="navbar-logo--text1">SH<img src="img/Ellipse.png" width="34" height="17" alt="logo">PY</p>
+                        <p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p>
                         <p class="navbar-logo--text2">shope any where</p>
                      </div>
                   </a>
@@ -150,11 +150,13 @@ AppAsset::register($this);
                </div>
                <div class="col col-12 col-md-6 col-lg-6 col-xl-2">
                   <h5>Payment Methods</h5>
-                  <img src="img/Payment.png" alt="social">
+                  <img src="/img/Payment.png" alt="social">
                </div>
             </div>
          </div>
       </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
        <?php $this->endBody() ?>
    </body>
 </html>

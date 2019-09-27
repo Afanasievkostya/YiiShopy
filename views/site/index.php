@@ -1,14 +1,14 @@
 <?php
 
 /* @var $this yii\web\View */
-
+ use yii\helpers\Html;
 $this->title = 'My Yii Application';
 ?>
 <div class="page-main">
 <section class="featured">
 <div class="container">
     <div class="featured-full">
-       <h1 class="pagetitle"><?= $pagetitle; ?></h1>
+       <h1 class="pagetitle">FULL WINTER KIT</h1>
        <p class="featured-full--text__top">Half Jacket + Skiny Trousers + Boot leather</p>
        <p class="featured-full--text__bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
        <ul class="featured-full--swither">
@@ -25,106 +25,75 @@ $this->title = 'My Yii Application';
       <h2><span>NEW</span> ARRIVALS</h2>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
    </div>
-   <div class="row card-deck">
+   <div class="new-arrivals">
+            <?php if( !empty($news) ): ?>
+            <div class="row card-deck">
+               <?php foreach ($news as $new): ?>
+               <div class="col arrivals-col col-12 col-sm-6 col-lg-3">
+                  <div class="card arrivals-card" tabindex="0">
+                     <div class="card-face">
+                        <div class="card-image">
+                           <?= Html::img("@web/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title"><?= $new->name?></h5>
+                           <div class="text-muted">
+                              <p><?= $new->price?> $</p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card-active">
+                        <div class="card-image">
+                           <?= Html::img("@web/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
+                        </div>
+                        <div class="card-title">
+                           <h5 class="card-title--text"><?= $new->name?></h5>
+                        </div>
+                        <form class="form card-body" id="cardForm" action="index.php" method="post" enctype="multipart/form-data">
+                           <div class="form_item card-text--size">
+                              <p>sizes:</p>
+                              <ul class="arrivals-size">
+                                 <li class="arrivals-size--item"><input type="checkbox" id="<?= 's' . $new->id?>" name="size" value="s"><label for="<?= 's' . $new->id?>" tabindex="0">s</label></li>
+                                 <li class="arrivals-size--item"><input type="checkbox" id="<?= 'm' . $new->id?>" name="size" value="m"><label for="<?= 'm' . $new->id?>">m</label></li>
+                                 <li class="arrivals-size--item"><input type="checkbox" id="<?= 'l' . $new->id?>" name="size" value="l"><label for="<?= 'l' . $new->id?>">l</label></li>
+                                 <li class="arrivals-size--item"><input type="checkbox" id="<?= 'xl' . $new->id?>" name="size" value="xl"><label for="<?= 'xl' . $new->id?>">xl</label>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="form_item text-color">
+                              <ul class="arrivals-color">
+                                 <li class="arrivals-color--item"><input type="checkbox" id="<?= 'red' . $new->id?>" name="color" value="#e12e3f"><label for="<?= 'red' . $new->id?>" tabindex="0"></label></li>
+                                 <li class="arrivals-color--item"><input type="checkbox" id="<?= 'gray' . $new->id?>" name="color" value="#34404b"><label for="<?= 'gray' . $new->id?>"></label>
+                                 </li>
+                                 <li class="arrivals-color--item"><input type="checkbox" id="<?= 'blue' . $new->id?>" name="color" value="#3ab3ff"><label for="<?= 'blue' . $new->id?>"></label>
+                                 </li>
+                                 <li class="arrivals-color--item"><input type="checkbox" id="<?= 'green' . $new->id?>" name="color" value="#2fd967"><label for="<?= 'green' . $new->id?>"></label>
+                                 </li>
+                              </ul>
+                           </div>
+                        </form>
+                        <div class="text-muted">
+                           <ul class="arrivals-icon">
+                              <li><a href="#"><img src="/img/Share.png" alt="">
+                                 </a>
+                              </li>
+                              <li>
+                                 <a class="arrivals-icon--submit" id="clickForm" href="#"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;"></a>
+                              </li>
+                              <li><a class="arrivals-icon--fav" href="#"><img src="/img/Like.png" alt=""></a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+         </div>
 
-  <div class="col arrivals-col col-12 col-sm-6 col-lg-3">
-     <div class="card arrivals-card" tabindex="0">
-        <div class="card-face">
-           <div class="card-image">
-              <img src="/img/product1.png" class="card-img-top" alt="">
-           </div>
-           <div class="card-body">
-              <h5 class="card-title">Reebok Track Jacket1</h5>
-              <div class="text-muted">
-                 <p>100$</p>
-              </div>
-           </div>
-        </div>
-        <div class="card-active">
-           <!-- блок image -->
-           <div class="card-image">
-              <img src="/img/product1.png" class="card-img-top" alt="">
-           </div>
-           <!-- блок name -->
-           <div class="card-title">
-              <h5 class="card-title--text">Reebok Track Jacket1</h5>
-           </div>
-           <!--форма определения размера и цвета товара-->
-           <form class="form card-body" id="cardForm" action="index.php" method="post" enctype="multipart/form-data">
-              <!--блок size-->
-              <div class="form_item card-text--size">
-                 <p>sizes:</p>
-                 <?php
-                    $id = isset($card['id']) ? $card['id'] : '';
-                    ?>
-                 <ul class="arrivals-size">
-                    <?php
-                       $value = isset($carts['size']) ? $carts['size'] : '';
-                       ?>
-                    <li class="arrivals-size--item"><input type="checkbox" id="<?= 's' . $id; ?>" name="size" value="s"><label for="<?= 's' . $id; ?>" tabindex="0">s</label></li>
-                    <?php
-                       $value = isset($carts['size']) ? $carts['size'] : '';
-                       ?>
-                    <li class="arrivals-size--item"><input type="checkbox" id="<?= 'm' . $id; ?>" name="size" value="m"><label for="<?= 'm' . $id; ?>">m</label></li>
-                    <?php
-                       $value = isset($carts['size']) ? $carts['size'] : '';
-                       ?>
-                    <li class="arrivals-size--item"><input type="checkbox" id="<?= 'l' . $id; ?>" name="size" value="l"><label for="<?= 'l' . $id; ?>">l</label></li>
-                    <?php
-                       $value = isset($carts['size']) ? $carts['size'] : '';
-                       ?>
-                    <li class="arrivals-size--item"><input type="checkbox" id="<?= 'xl' . $id; ?>" name="size" value="xl"><label for="<?= 'xl' . $id; ?>">xl</label>
-                    </li>
-                 </ul>
-              </div>
-              <!--блок color-->
-              <div class="form_item text-color">
-                 <?php
-                    $id = isset($card['id']) ? $card['id'] : '';
-                    ?>
-                 <ul class="arrivals-color">
-                    <?php
-                       $value = isset($carts['color']) ? $carts['color'] : '';
-                       ?>
-                    <li class="arrivals-color--item"><input type="checkbox" id="<?= 'red' . $id; ?>" name="color" value="#e12e3f"><label for="<?= 'red' . $id; ?>" tabindex="0"></label></li>
-                    <?php
-                       $value = isset($carts['color']) ? $carts['color'] : '';
-                       ?>
-                    <li class="arrivals-color--item"><input type="checkbox" id="<?= 'gray' . $id; ?>" name="color" value="#34404b"><label for="<?= 'gray' . $id; ?>"></label>
-                    </li>
-                    <?php
-                       $value = isset($carts['color']) ? $carts['color'] : '';
-                       ?>
-                    <li class="arrivals-color--item"><input type="checkbox" id="<?= 'blue' . $id; ?>" name="color" value="#3ab3ff"><label for="<?= 'blue' . $id; ?>"></label>
-                    </li>
-                    <?php
-                       $value = isset($carts['color']) ? $carts['color'] : '';
-                       ?>
-                    <li class="arrivals-color--item"><input type="checkbox" id="<?= 'green' . $id; ?>" name="color" value="#2fd967"><label for="<?= 'green' . $id; ?>"></label>
-                    </li>
-                 </ul>
-              </div>
-              </form>
-              <div class="text-muted">
-                 <ul class="arrivals-icon">
-                    <li><a href="#"><img src="/img/Share.png" alt=""></a>
-                    </li>
-                    <li>
-                       <a class="arrivals-icon--submit" id="clickForm" href="/index.php?id=<?=$card['id']; ?>"><img src="img/Add-Cart.png" style="width: 23px; height: 23px;"></a>
-                    </li>
-                    <li><a class="arrivals-icon--fav" href="/favourites.php?id=<?=$card['id']; ?>"><img src="/img/Like.png" alt=""></a>
-                    </li>
-                 </ul>
-              </div>
-
-        </div>
-     </div>
-  </div>
-
-</div>
-   </div>
    </section>
- 
+ </div>
    <!--**************-->
    <div class="container">
     <section class="not-dial">
@@ -143,7 +112,7 @@ $this->title = 'My Yii Application';
           </div>
           <div class="col col-6 col-sm-6 col-md-6 col-lg-4 col-xl-4">
              <ul class="dial-prace">
-                 <li><a href="#"><img src="img/Add-Cart.png" alt="карзина"></a></li>
+                 <li><a href="#"><img src="/img/Add-Cart.png" alt="карзина"></a></li>
                 <li class="prace-text">120<span style="font-size: 14px;"><i class="fas fa-dollar-sign"></i></span></li>
              </ul>
           </div>
