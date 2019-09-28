@@ -19,8 +19,8 @@ AppAsset::register($this);
      <meta charset="<?= Yii::$app->charset ?>">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-     <?php $this->registerCsrfMetaTags() ?>
-      <title><?= Html::encode($this->title) ?></title>
+     <?= Html::csrfMetaTags() ?>
+     <title><?= Html::encode($this->title) ?></title>
       <?php $this->head() ?>
    </head>
    <body>
@@ -56,8 +56,7 @@ AppAsset::register($this);
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <a class="navbar-brand" href="index.php">
                   <div class="navbar-logo">
-                     <p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p>
-                     <p class="navbar-logo--text2">shope any where</p>
+                    <?= Html::a('<p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p><p class="navbar-logo--text2">shope any where</p>', ['site/index'], ['class'=>'nav-link'])?>
                   </div>
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,12 +119,9 @@ AppAsset::register($this);
          <div class="container">
             <div class="row footer-row">
                <div class="col col-12 col-md-5 col-lg-4">
-                  <a class="navbar-brand" href="#">
                      <div class="navbar-logo">
-                        <p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p>
-                        <p class="navbar-logo--text2">shope any where</p>
+                        <?= Html::a('<p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p><p class="navbar-logo--text2">shope any where</p>', ['site/index'], ['class'=>'nav-link'])?>
                      </div>
-                  </a>
                   <p class="navbar-brand--bottom">shopy c 2015 . your copy right here</p>
                </div>
                <div class="col col-6 col-md-3 col-lg-3 col-xl-2 footer-center">

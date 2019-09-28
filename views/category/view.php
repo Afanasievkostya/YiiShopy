@@ -6,7 +6,7 @@
    <div class="container">
       <section class="products">
          <div class="top-headr">
-            <h2><span>PRODUCTS</span></h2>
+            <h2><span><?= $category->name?></span></h2>
          </div>
          <div class="row row-products">
             <div class="col-products col-xl-3">
@@ -15,7 +15,7 @@
                   <h2 class="title-product title-product--active">Categories</h2>
                   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                      <ul class="categories-sheps mr-auto">
-                       <?= \app\components\MenuWidget::Widget(['tpl' => 'menu']); ?>
+                        <?= \app\components\MenuWidget::Widget(['tpl' => 'menu']); ?>
                      </ul>
                   </div>
                </div>
@@ -48,48 +48,48 @@
             </div>
             <div class="col-products col-xl-9">
                <div class="new-arrivals">
-                  <?php if( !empty($news) ): ?>
+                  <?php if( !empty($products) ): ?>
                   <div class="row card-deck">
-                     <?php foreach ($news as $new): ?>
+                     <?php foreach ($products as $product): ?>
                      <div class="col arrivals-col col-12 col-sm-6 col-lg-6">
                         <div class="card arrivals-card" tabindex="0">
                            <div class="card-face">
                               <div class="card-image">
-                                 <?= Html::img("@web/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
+                                 <?= Html::img("@web/{$product->image}", ['class' => 'card-img-top', 'alt' => $product->name])?>
                               </div>
                               <div class="card-body">
-                                 <h5 class="card-title"><?= $new->name?></h5>
+                                 <h5 class="card-title"><?= $product->name?></h5>
                                  <div class="text-muted">
-                                    <p><?= $new->price?> $</p>
+                                    <p><?= $product->price?> $</p>
                                  </div>
                               </div>
                            </div>
                            <div class="card-active">
                               <div class="card-image">
-                                 <?= Html::img("@web/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
+                                 <?= Html::img("@web/{$product->image}", ['class' => 'card-img-top', 'alt' => $product->name])?>
                               </div>
                               <div class="card-title">
-                                 <h5 class="card-title--text"><?= $new->name?></h5>
+                                 <h5 class="card-title--text"><?= $product->name?></h5>
                               </div>
                               <form class="form card-body" id="cardForm" action="index.php" method="post" enctype="multipart/form-data">
                                  <div class="form_item card-text--size">
                                     <p>sizes:</p>
                                     <ul class="arrivals-size">
-                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 's' . $new->id?>" name="size" value="s"><label for="<?= 's' . $new->id?>" tabindex="0">s</label></li>
-                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 'm' . $new->id?>" name="size" value="m"><label for="<?= 'm' . $new->id?>">m</label></li>
-                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 'l' . $new->id?>" name="size" value="l"><label for="<?= 'l' . $new->id?>">l</label></li>
-                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 'xl' . $new->id?>" name="size" value="xl"><label for="<?= 'xl' . $new->id?>">xl</label>
+                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 's' . $product->id?>" name="size" value="s"><label for="<?= 's' . $product->id?>" tabindex="0">s</label></li>
+                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 'm' . $product->id?>" name="size" value="m"><label for="<?= 'm' . $product->id?>">m</label></li>
+                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 'l' . $product->id?>" name="size" value="l"><label for="<?= 'l' . $product->id?>">l</label></li>
+                                       <li class="arrivals-size--item"><input type="checkbox" id="<?= 'xl' . $product->id?>" name="size" value="xl"><label for="<?= 'xl' . $product->id?>">xl</label>
                                        </li>
                                     </ul>
                                  </div>
                                  <div class="form_item text-color">
                                     <ul class="arrivals-color">
-                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'red' . $new->id?>" name="color" value="#e12e3f"><label for="<?= 'red' . $new->id?>" tabindex="0"></label></li>
-                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'gray' . $new->id?>" name="color" value="#34404b"><label for="<?= 'gray' . $new->id?>"></label>
+                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'red' . $product->id?>" name="color" value="#e12e3f"><label for="<?= 'red' . $product->id?>" tabindex="0"></label></li>
+                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'gray' . $product->id?>" name="color" value="#34404b"><label for="<?= 'gray' . $product->id?>"></label>
                                        </li>
-                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'blue' . $new->id?>" name="color" value="#3ab3ff"><label for="<?= 'blue' . $new->id?>"></label>
+                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'blue' . $product->id?>" name="color" value="#3ab3ff"><label for="<?= 'blue' . $product->id?>"></label>
                                        </li>
-                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'green' . $new->id?>" name="color" value="#2fd967"><label for="<?= 'green' . $new->id?>"></label>
+                                       <li class="arrivals-color--item"><input type="checkbox" id="<?= 'green' . $product->id?>" name="color" value="#2fd967"><label for="<?= 'green' . $product->id?>"></label>
                                        </li>
                                     </ul>
                                  </div>
@@ -116,8 +116,12 @@
                 'pagination' => $pages,]);
                 ?>
               </div>
-           <?php endif; ?>
-               </div>
+                  <?php else :?>
+                  <div class="top-headr--error">
+                  <h2>Здесь товаров пока нет.</h2>
+                   </div>
+                   <?php endif; ?>
+                  </div>
             </div>
          </div>
       </section>

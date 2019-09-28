@@ -2,7 +2,6 @@
 
 /* @var $this yii\web\View */
  use yii\helpers\Html;
-$this->title = 'My Yii Application';
 ?>
 <div class="page-main">
 <section class="featured">
@@ -89,6 +88,12 @@ $this->title = 'My Yii Application';
                </div>
                <?php endforeach; ?>
             </div>
+            <div class="pagination-wrap">
+                <?php
+                 echo \yii\widgets\LinkPager::widget([
+                'pagination' => $pages,]);
+                ?>
+             </div>
             <?php endif; ?>
          </div>
 

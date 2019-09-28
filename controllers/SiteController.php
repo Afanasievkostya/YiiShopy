@@ -9,10 +9,12 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\models\Products;
+use app\models\category;
+use app\models\products;
+use yii\data\Pagination;
 
 
-class SiteController extends Controller
+class SiteController extends AppController
 {
     /**
      * {@inheritdoc}
@@ -63,9 +65,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        //return $this->render('index');
-        $news = Products::find()->where(['new' => '1'])->limit(4)->all();
-        return $this->render('index', compact('news'));
+      //  $news = Products::find()->where(['new' => '1'])->limit(4)->all();
+        $query = Products::find()->where(['new' => '1']);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 4, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $news = $query->offset($pages->offset)->limit($pages->limit)->all();
+
+        $this->setMeta('YiiShopy');
+        return $this->render('index', compact('news', 'pages'));
     }
 
     /**

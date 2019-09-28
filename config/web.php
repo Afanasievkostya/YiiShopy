@@ -50,6 +50,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+              'category/<id:\d+>/page/<page:\d+>' => 'category/view', // красивая ссылка для пагинации
+              'category/<id:\d+>' => 'category/view',// красивая ссылка
             ],
         ],
     ],
