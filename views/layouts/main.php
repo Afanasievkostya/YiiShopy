@@ -53,7 +53,7 @@ AppAsset::register($this);
                   </ul>
                </div>
             </nav>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
                <a class="navbar-brand" href="index.php">
                   <div class="navbar-logo">
                     <?= Html::a('<p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p><p class="navbar-logo--text2">shope any where</p>', ['site/index'], ['class'=>'nav-link'])?>

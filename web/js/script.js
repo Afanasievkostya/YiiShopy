@@ -59,5 +59,42 @@ $(function () {
 
     $('.categories-sheps').dcAccordion({speed: 300});
 
+    // gallereya
+
+    $('.thumbnails a').click(function(){                                   // При нажатиина миниатюру
+    var images = $(this).find('img');
+    var imgSrc = images.attr('src');
+
+    $(".big-image img").attr({ src: imgSrc });                         // Подменяем адрес большого изображения на адрес выбранного
+    $(this).siblings('a').removeClass('active');                       // Удаляем класс .active со ссылки чтоб убрать рамку
+    images.parent().addClass('active');                                // Добавляем класс .active на выбранную миниатюру
+    return false;
+  });
+
+    // счётчик
+
+ var i = $('.counter input').val();
+
+    $('.next').click(function() {
+        i++;
+        $('.counter input').attr('value', i);
+    });
+
+
+     $('.rev').click(function() {
+         i--;
+         if (i > 0) {
+        $('.counter input').attr('value', i);
+         }
+    });
+
+    // корусель
+
+    $('.carousel').carousel({
+        interval: false
+    })
+
+
+
 
 });

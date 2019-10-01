@@ -69,7 +69,7 @@
                                  <?= Html::img("@web/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
                               </div>
                               <div class="card-title">
-                                 <h5 class="card-title--text"><?= $new->name?></h5>
+                                 <h5 class="card-title--text"><a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $new->id]) ?>"><?= $new->name?></a></h5>
                               </div>
                               <form class="form card-body" id="cardForm" action="index.php" method="post" enctype="multipart/form-data">
                                  <div class="form_item card-text--size">

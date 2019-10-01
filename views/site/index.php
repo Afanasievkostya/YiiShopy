@@ -46,7 +46,7 @@
                            <?= Html::img("@web/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
                         </div>
                         <div class="card-title">
-                           <h5 class="card-title--text"><?= $new->name?></h5>
+                           <h5 class="card-title--text"><a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $new->id]) ?>"><?= $new->name?></a></h5>
                         </div>
                         <form class="form card-body" id="cardForm" action="index.php" method="post" enctype="multipart/form-data">
                            <div class="form_item card-text--size">
@@ -73,13 +73,13 @@
                         </form>
                         <div class="text-muted">
                            <ul class="arrivals-icon">
-                              <li><a href="#"><img src="/img/Share.png" alt="">
+                              <li><a href="#"><img src="/img/Share.png" alt="shere">
                                  </a>
                               </li>
                               <li>
-                                 <a class="arrivals-icon--submit" id="clickForm" href="#"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;"></a>
+                                 <a class="arrivals-icon--submit" id="clickForm" href="#"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;" alt="cart"></a>
                               </li>
-                              <li><a class="arrivals-icon--fav" href="#"><img src="/img/Like.png" alt=""></a>
+                              <li><a class="arrivals-icon--fav" href="#"><img src="/img/Like.png" alt="like"></a>
                               </li>
                            </ul>
                         </div>

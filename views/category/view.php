@@ -69,7 +69,7 @@
                                  <?= Html::img("@web/{$product->image}", ['class' => 'card-img-top', 'alt' => $product->name])?>
                               </div>
                               <div class="card-title">
-                                 <h5 class="card-title--text"><?= $product->name?></h5>
+                                 <h5 class="card-title--text"><a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>"><?= $product->name?></a></h5>
                               </div>
                               <form class="form card-body" id="cardForm" action="index.php" method="post" enctype="multipart/form-data">
                                  <div class="form_item card-text--size">
@@ -118,7 +118,7 @@
               </div>
                   <?php else :?>
                   <div class="top-headr--error">
-                  <h2>Здесь товаров пока нет.</h2>
+                  <h2 class="top-headr--error__text">Здесь товаров пока нет.</h2>
                    </div>
                    <?php endif; ?>
                   </div>
