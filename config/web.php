@@ -53,6 +53,7 @@ $config = [
               'category/<id:\d+>/page/<page:\d+>' => 'category/view', // красивая ссылка для пагинации
               'category/<id:\d+>' => 'category/view',// красивая ссылка
               'product/<id:\d+>' => 'product/view',
+              'Search' => 'category/search',
             ],
         ],
     ],

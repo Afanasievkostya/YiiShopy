@@ -87,8 +87,8 @@ AppAsset::register($this);
                               <span style="font-size: 1.2rem; color: #46505a;"><i class="fas fa-search"></i></span>
                            </button>
                            <div class="dropdown-menu dropdown-menu-right">
-                              <form class="form-inline my-2 my-lg-0">
-                                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                              <form class="form-inline my-2 my-lg-0" method="get" action="<?= \yii\helpers\Url::to(['category/search'])?>">
+                                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="q">
                                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                               </form>
                            </div>
