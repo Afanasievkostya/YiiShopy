@@ -1,8 +1,8 @@
 <?php
 
 namespace app\controllers;
-use app\models\category;
-use app\models\products;
+use app\models\Category;
+use app\models\Products;
 use Yii;
 
 

@@ -77,7 +77,7 @@
                                  </a>
                               </li>
                               <li>
-                                 <a class="arrivals-icon--submit" id="clickForm" href="#"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;" alt="cart"></a>
+                                 <a class="arrivals-icon--submit" id="clickForm" href="<?= \yii\helpers\Url::to(['cart/add', 'id' => $new->id])?>" data-id="<?= $new->id?>"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;" alt="cart"></a>
                               </li>
                               <li><a class="arrivals-icon--fav" href="#"><img src="/img/Like.png" alt="like"></a>
                               </li>
