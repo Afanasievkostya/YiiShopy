@@ -21,7 +21,6 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
       'https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap',
-      'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js',
       'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css',
       'https://use.fontawesome.com/releases/v5.3.1/css/all.css',
       'css/normalize.min.css',
