@@ -90,23 +90,62 @@ $(function () {
 
     // корусель
 
-    $('.carousel').carousel({
-        interval: false
-    })
+    $('.carousel').carousel({interval: false})
 
-    // Cart
+// модальное окно
 
-    $('.arrivals-icon--submit').on('click', function (e) {
-        e.preventDefault();
-        var id = $(this).data('id');
+function showCart(cart) {
+       $('#cart .modal-body').html(cart);
+        $('#cart').modal();
+    }
+
+    // показ корзины из navbar
+
+    $('.top-cart').on('click', function (e) {
+         e.preventDefault();
+         $.ajax({
+             url: '/cart/show',
+             type: 'GET',
+             success: function(res){
+                 if(!res) alert('Ошибка!');
+                 showCart(res);
+             },
+             error: function(){
+                 alert('Error!');
+             }
+         });
+
+    });
+
+    // удаление конкретного тов. из корзины
+
+    $('#cart .modal-body').on('click', '.del-item', function () {
+      var id = $(this).data('id');
+      $.ajax({
+          url: '/cart/del-item',
+          data: {id: id},
+          type: 'GET',
+          success: function(res){
+              if(!res) alert('Ошибка!');
+              showCart(res);
+          },
+          error: function(){
+              alert('Error!');
+          }
+      });
+
+    });
+
+
+    // функция очистки корзины
+
+      $('.clear-cart').on('click', function () {
         $.ajax({
-            url: '/cart/add',
-            data: {id: id},
+            url: '/cart/clear',
             type: 'GET',
             success: function(res){
                 if(!res) alert('Ошибка!');
-                console.log(res);
-                //showCart(res);
+                showCart(res);
             },
             error: function(){
                 alert('Error!');
@@ -114,7 +153,26 @@ $(function () {
         });
     });
 
+    // Cart
 
+    $('.add-to-cart').on('click', function (e) {
+         e.preventDefault();
+         var id = $(this).data('id'), qty = $('#qty').val();
+         $.ajax({
+             url: '/cart/add',
+             data: {id: id, qty: qty},
+             type: 'GET',
+             success: function(res){
+                 if(!res) alert('Ошибка!');
+                 showCart(res);
+             },
+             error: function(){
+                 alert('Error!');
+             }
+         });
+     });
+
+    $('.cart-prace--text').html();
 
 
 

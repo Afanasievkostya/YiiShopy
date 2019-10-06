@@ -77,7 +77,7 @@
                                  </a>
                               </li>
                               <li>
-                                 <a class="arrivals-icon--submit" id="clickForm" href="<?= \yii\helpers\Url::to(['cart/add', 'id' => $new->id])?>" data-id="<?= $new->id?>"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;" alt="cart"></a>
+                                 <a class="arrivals-icon--submit add-to-cart" href="<?= \yii\helpers\Url::to(['cart/add', 'id' => $new->id]) ?>" data-id="<?= $new->id?>" data-toggle="modal"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;" alt="cart"></a>
                               </li>
                               <li><a class="arrivals-icon--fav" href="#"><img src="/img/Like.png" alt="like"></a>
                               </li>
@@ -155,14 +155,14 @@
                        <div class="card-body card-body__desk">
                           <h5 class="card-title card-title--sales">Reebok Track Jacket4</h5>
                           <button class="card-text card-text--sales">
-                            <small class="text-muted text-muted__star">
+                            <div class="text-muted text-muted__star">
                              <span class="wrapper-muted">
                              <span style="color:  #f55d43;"><i class="fas fa-star"></i></span><span style="color:  #f55d43;"><i class="fas fa-star"></i></span><span style="color:  #f55d43;"><i class="fas fa-star"></i></span>
                              </span>
                              <span class="text-muted--sum">100 $</span>
-                             </small>
-                              <small class="text-muted__cart"><a href=""><img src="/img/Add-Cart.png" alt=""><span class="text-muted--add">add to cart</span></a>
-                             </small>
+                             </div>
+                              <div class="text-muted__cart"><a href=""><img src="/img/Add-Cart.png" alt=""><span class="text-muted--add">add to cart</span></a>
+                             </div>
                           </button>
                        </div>
                     </div>

@@ -52,7 +52,7 @@
                                  <p class="size-product--text">Choos Quantity:</p>
                                  <div class="counter">
                                      <span class="next" style="font-size: 12px;"><i class="fas fa-plus"></i></span>
-                                     <input type="text" value="1">
+                                     <input type="text" id="qty" value="1">
                                      <span class="rev" style="font-size: 12px;"><i class="fas fa-minus"></i></span>
                                  </div>
                               </div>
@@ -66,7 +66,7 @@
                               <ul class="muted-icon">
                                  <li class="submit-item"><a href="#"><img src="/img/Share.png" alt=""></a></li>
                                  <li class="submit-item">
-                                    <a href="#"><img src="/img/Add-Cart.png" alt=""></a>
+                                    <a class="arrivals-icon--submit add-to-cart" href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>" data-id="<?= $product->id?>"><img src="/img/Add-Cart.png" alt=""></a>
                                  </li>
                                  <li class="submit-item"><a href="#"><img src="/img/Like.png" alt=""></a></li>
                                  <li class="submit-item"><input class="btn btn-primary" type="submit" value="Order Now"></li>

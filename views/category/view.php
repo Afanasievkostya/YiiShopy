@@ -99,7 +99,7 @@
                                     <li><a href="#"><img src="/img/Share.png" alt=""></a>
                                     </li>
                                     <li>
-                                       <a class="arrivals-icon--submit" id="clickForm" href="#"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;"></a>
+                                       <a class="arrivals-icon--submit add-to-cart" href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>" data-id="<?= $product->id?>"><img src="/img/Add-Cart.png" style="width: 23px; height: 23px;"></a>
                                     </li>
                                     <li><a class="arrivals-icon--fav" href="#"><img src="/img/Like.png" alt=""></a>
                                     </li>
