@@ -99,12 +99,13 @@ AppAsset::register($this);
                      <a href="/favourites.php?="><img src="/img/Like.png" alt=""></a>
                       </li>
                      <li class="nav-right--item nav-right--item__prace">
+
                         <div class="cart-prace">
 
-                           <p class="cart-prace--text"></p>
-
+                            <p class="cart-prace--text"></p>
 
                         </div>
+
                         <a class="top-cart" href="#"><img src="/img/Cart.png" alt="карзина"></a>
 
                      </li>

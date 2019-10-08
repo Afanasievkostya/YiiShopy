@@ -1306,6 +1306,20 @@ button:not(:disabled) {
   color: #ff5912;
 }
 
+/*    order    */
+
+.order {
+  padding-bottom: 80px;
+}
+
+.order table {
+  margin-top: 40px;
+}
+
+.suc {
+  margin-top: 40px;
+}
+
 /*----footer------*/
 footer {
   padding-top: 30px;

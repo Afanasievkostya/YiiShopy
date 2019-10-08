@@ -1,6 +1,7 @@
 <?php
    /* @var $this yii\web\View */
    use yii\helpers\Html;
+   use yii\helpers\Url;
    ?>
 
 <div class="page-productShow">
@@ -31,7 +32,7 @@
                            Lorem Ipsum is simply dummy text of the printingand typesetting industry
                         </p>
                      </div>
-                     <form action="#">
+
                         <div class="wrap-top">
                            <div class="size-product">
                               <ul class="arrivals-size">
@@ -73,7 +74,7 @@
                               </ul>
                            </div>
                         </div>
-                     </form>
+
                   </div>
                </div>
             </div>
