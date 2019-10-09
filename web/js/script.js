@@ -105,7 +105,7 @@ $(function() {
     $('#cart').modal();
   }
 
-  // показ кол-ва товара над корзиной
+  // показ кол-ва товара в корзине
 
   function showQty(cart) {
     $('.cart-prace .cart-prace--text').html(cart);
@@ -121,7 +121,6 @@ $(function() {
       success: function(res) {
         if (!res) alert('Ошибка!');
         showCart(res);
-
       },
       error: function() {
         alert('Error!');
@@ -143,7 +142,6 @@ $(function() {
       success: function(res) {
         if (!res) alert('Ошибка!');
         showCart(res);
-
       },
       error: function() {
         alert('Error!');
@@ -185,7 +183,6 @@ $(function() {
       success: function(res) {
         if (!res) alert('Ошибка!');
         showCart(res);
-
       },
       error: function() {
         alert('Error!');
@@ -204,6 +201,14 @@ $(function() {
     success: function(res) {
       showQty(res);
     }
+  });
+
+  $('.btn-outline-secondary').on('click', function() {
+    location.reload();
+  });
+
+  $('.close').on('click', function() {
+    location.reload();
   });
 
 
