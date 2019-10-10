@@ -20,7 +20,7 @@ AppAsset::register($this);
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-     <title><?= Html::encode($this->title) ?></title>
+     <title>Админка | <?= Html::encode($this->title) ?></title>
       <?php $this->head() ?>
    </head>
    <body>
@@ -94,7 +94,7 @@ AppAsset::register($this);
                            </div>
                         </div>
                      </li>
-                     <li class="nav-right--item"><a href="<?= \yii\helpers\Url::to(['/admin'])?>"><img src="/img/User.png" alt="вход"></a>
+                     <li class="nav-right--item"><a href="#"><img src="/img/User.png" alt="вход"></a>
                      </li>
                      <?php if(!Yii::$app->user->isGuest): ?>
                           <li><a href="<?= \yii\helpers\Url::to(['/site/logout'])?>"><?= Yii::$app->user->identity['username']?>(Выход)</a></li>
@@ -159,25 +159,7 @@ AppAsset::register($this);
       </footer>
 
 
-      <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-     <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">Корзина</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Продолжить покупки</button>
-        <a href="<?= \yii\helpers\Url::to(['cart/view']) ?>" class="btn btn-success">Оформить заказ</a>
-         <button type="button" class="btn btn-danger clear-cart">Очистить корзину</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
       <?php $this->endBody() ?>

@@ -8,6 +8,12 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'language' => 'ru-RU',
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'layout' => 'admin',
+        ],
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -24,6 +30,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+          //  'loginUrl' => 'cart/view',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -34,14 +41,14 @@ $config = [
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             'useFileTransport' => true,
-            // 'transport' => [
-            //     'class' => 'Swift_SmtpTransport',
-            //     'host' => 'smtp.mail.ru',
-            //     'username' => 'username',
-            //     'password' => 'password',
-            //     'port' => '465',
-            //     'encryption' => 'ssl',
-            // ],
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.mail.ru',
+                'username' => 'username',
+                'password' => 'password',
+                'port' => '465',
+                'encryption' => 'ssl',
+            ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
