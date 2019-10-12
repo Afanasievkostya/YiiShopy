@@ -119,7 +119,9 @@ AppAsset::register($this);
          </div>
          </header>
       <main>
+        <div class="container">
           <?= $content ?>
+        </div>
         </main>
       <footer>
          <div class="container">

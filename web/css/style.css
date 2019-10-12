@@ -1320,6 +1320,39 @@ button:not(:disabled) {
   margin-top: 40px;
 }
 
+/*    order   */
+.grid-view td:last-child {
+  text-align: center;
+}
+
+.grid-view td:last-child a:hover,
+.grid-view td:last-child a:focus {
+  opacity: 0.5;
+}
+
+.glyphicon {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.glyphicon-eye-open {
+ background: url("../img/view.png")no-repeat;
+ background-position: center;
+}
+.glyphicon-pencil {
+  background: url("../img/pencil.png")no-repeat;
+  background-position: center;
+}
+.glyphicon-trash {
+  background: url("../img/delete.png")no-repeat;
+  background-position: center;
+}
+
 /*----footer------*/
 footer {
   padding-top: 30px;

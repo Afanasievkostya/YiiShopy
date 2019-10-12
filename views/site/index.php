@@ -24,7 +24,6 @@
       <h2><span>NEW</span> ARRIVALS</h2>
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
    </div>
-   <?php debug(Yii::$app->user->identity)?>
    <div class="new-arrivals">
             <?php if( !empty($news) ): ?>
             <div class="row card-deck">
