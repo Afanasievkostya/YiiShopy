@@ -11,11 +11,11 @@ $this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="order-view">
-
+<div class="order order-view">
+   <div class="order-head">
     <h1>Просмотр заказа №<?= $model->id ?></h1>
-
-    <p>
+  </div>
+    <p order-button>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',

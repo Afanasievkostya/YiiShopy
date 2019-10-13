@@ -9,11 +9,12 @@ use yii\grid\GridView;
 $this->title = 'Orders';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="order-index">
+<div class="order order-index">
+   <div class="order-head">
+     <h1><?= Html::encode($this->title) ?></h1>
+    </div>
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
+    <p class="order-button">
         <?= Html::a('Create Order', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 

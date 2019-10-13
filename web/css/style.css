@@ -218,6 +218,87 @@ header {
   color: #fff;
 }
 
+/*     header-bottom   */
+.header-bottom {
+  padding-bottom: 40px;
+}
+
+.nav-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*  Dropdown menu*/
+/*.navbar-header
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+
+.nav.navbar-nav > li:hover > ul.sub-menu{
+  display: block;
+  -webkit-animation: fadeInUp 400ms;
+  -moz-animation: fadeInUp 400ms;
+  -ms-animation: fadeInUp 400ms;
+  -o-animation: fadeInUp 400ms;
+  animation: fadeInUp 400ms;
+}
+
+ul.sub-menu {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background: rgba(0, 0, 0, 0.6);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 220px;
+	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+	display: none;
+	z-index: 999;
+}
+
+.dropdown ul.sub-menu li .active{
+  color: #FDB45E;
+  padding-left: 0;
+}
+
+
+.navbar-nav li ul.sub-menu li{
+  padding: 10px 20px 0 ;
+}
+
+.navbar-nav li ul.sub-menu li:last-child{
+  padding-bottom: 20px;
+}
+
+.navbar-nav li ul.sub-menu li a{
+  color: #fff;
+}
+
+.navbar-nav li ul.sub-menu li a:hover{
+    color: #FDB45E;
+}
+
+.fa-angle-down{
+  padding-left: 5px;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}*/
 /*   featured   */
 .featured {
   padding: 18rem 0;
@@ -1291,7 +1372,6 @@ button:not(:disabled) {
 }
 
 /*   cart    */
-
 .del-item {
   cursor: pointer;
 }
@@ -1307,9 +1387,8 @@ button:not(:disabled) {
 }
 
 /*    order    */
-
 .order {
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .order table {
@@ -1320,7 +1399,30 @@ button:not(:disabled) {
   margin-top: 40px;
 }
 
-/*    order   */
+.order-head {
+  padding: 40px 0 40px 0;
+  text-align: center;
+}
+
+.order-button {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-top: 40px;
+}
+
+.top-user {
+  font-size: 18px;
+  color: rgba(0, 0, 0, .5);
+}
+
+.top-user:hover,
+.top-user:focus {
+  color: rgba(244, 43, 7);
+  text-decoration: none;
+}
+
 .grid-view td:last-child {
   text-align: center;
 }
@@ -1341,13 +1443,15 @@ button:not(:disabled) {
 }
 
 .glyphicon-eye-open {
- background: url("../img/view.png")no-repeat;
- background-position: center;
+  background: url("../img/view.png")no-repeat;
+  background-position: center;
 }
+
 .glyphicon-pencil {
   background: url("../img/pencil.png")no-repeat;
   background-position: center;
 }
+
 .glyphicon-trash {
   background: url("../img/delete.png")no-repeat;
   background-position: center;
@@ -1394,8 +1498,6 @@ footer .navbar-logo .nav-link {
 .footer-center .active {
   color: #ff5912;
 }
-
-
 
 /*   error   */
 .top-headr--error {

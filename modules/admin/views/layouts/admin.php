@@ -10,6 +10,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -56,7 +57,7 @@ AppAsset::register($this);
             <nav class="navbar navbar-expand-lg navbar-light">
                <a class="navbar-brand" href="index.php">
                   <div class="navbar-logo">
-                    <?= Html::a('<p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p><p class="navbar-logo--text2">shope any where</p>', ['site/index'], ['class'=>'nav-link'])?>
+                    <?= Html::a('<p class="navbar-logo--text1">SH<img src="/img/Ellipse.png" width="34" height="17" alt="logo">PY</p><p class="navbar-logo--text2">shope any where</p>', ['/site/index'], ['class'=>'nav-link'])?>
                   </div>
                </a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,10 +66,10 @@ AppAsset::register($this);
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                      <li class="nav-item active">
-                        <?= Html::a('Home', ['site/index'], ['class'=>'nav-link'])?>
+                        <?= Html::a('Home', ['/site/index'], ['class'=>'nav-link'])?>
                      </li>
                      <li class="nav-item">
-                        <?= Html::a('Products', ['category/product'], ['class'=>'nav-link'])?>
+                        <?= Html::a('Products', ['/category/product'], ['class'=>'nav-link'])?>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#">Hot Deals</a>
@@ -96,8 +97,9 @@ AppAsset::register($this);
                      </li>
                      <li class="nav-right--item"><a href="#"><img src="/img/User.png" alt="вход"></a>
                      </li>
-                     <?php if(!Yii::$app->user->isGuest): ?>
-                          <li><a href="<?= \yii\helpers\Url::to(['/site/logout'])?>"><?= Yii::$app->user->identity['username']?>(Выход)</a></li>
+                     <?php if (!Yii::$app->user->isGuest): ?>
+                          <li class="nav-right--item"><a class="top-user" href="<?= \yii\helpers\Url::to(['/site/logout'])?>"><?= Yii::$app->user->identity['username']?>(Выход)</a>
+                          </li>
                       <?php endif;?>
                      <li class="nav-right--item">
                      <a href="/favourites.php?="><img src="/img/Like.png" alt=""></a>
@@ -116,10 +118,57 @@ AppAsset::register($this);
                   </ul>
                </div>
             </nav>
-         </div>
+
+         <div class="header-bottom"><!--header-bottom-->
+
+                <div class="row">
+                    <div class="col-lg-5">
+
+                            <ul class="nav-bottom">
+                                <li><a href="<?=\yii\helpers\Url::to(['/admin']) ?>" class="btn btn-warning" role="button">Home</a></li>
+
+
+                                <li class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Категории
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="<?=\yii\helpers\Url::to(['category/index']) ?>">Список категорий</a>
+    <a class="dropdown-item" href="<?=\yii\helpers\Url::to(['category/create']) ?>">Добавить категорию</a>
+  </div>
+</li>
+
+
+
+                                <li class="dropdown">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Товары
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="<?=\yii\helpers\Url::to(['product/index']) ?>">Список товаров</a>
+
+  </div>
+</li>
+
+
+                            </ul>
+
+                    </div>
+                </div>
+
+        </div><!--/header-bottom-->
+        </div>
          </header>
       <main>
         <div class="container">
+          <?php if( Yii::$app->session->hasFlash('success') ): ?>
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <?php echo Yii::$app->session->getFlash('success'); ?>
+            </div>
+        <?php endif;?>
           <?= $content ?>
         </div>
         </main>
