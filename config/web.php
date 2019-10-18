@@ -14,6 +14,7 @@ $config = [
             'layout' => 'admin',
             'defaultRoute' => 'order/index'
         ],
+
     ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -60,7 +61,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
+        'db' => require(__DIR__ . '/db.php'),
 
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -73,6 +74,7 @@ $config = [
             ],
         ],
     ],
+
     'params' => $params,
 ];
 

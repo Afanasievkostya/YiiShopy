@@ -12,13 +12,13 @@
                      <div class="gallery-box">
                         <div class="view">
                            <div class="big-image">
-                           <?= Html::img("@web/{$product->image}", ['alt' => $products->name])?>
+                           <?= Html::img("@web/img/{$product->image}", ['alt' => $products->name])?>
                         </div>
                         <div class="thumbnails">
                            <a href="images/img1.jpg" class="wrap-img"><img src="/img/no-image.png" alt="Product5-2"></a>
                            <a href="images/img2.jpg" class="wrap-img"><img src="/img/no-image.png" alt="Product5-3"></a>
                            <a href="images/img3.jpg" class="wrap-img active">
-                           <?= Html::img("@web/{$product->image}", ['alt' => $products->name])?>
+                           <?= Html::img("@web/img/{$product->image}", ['alt' => $products->name])?>
                            </a>
                         </div>
                      </div>
@@ -28,8 +28,8 @@
                      <div class="top-headr">
                         <h2><span>FULL WINTER KIT</span></h2>
                         <p class="productShow--text featured-full--text__top"><?= $product->name?></p>
-                        <p class="productShow--text__bottom  featured-full--text__bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry
-                           Lorem Ipsum is simply dummy text of the printingand typesetting industry
+                        <p class="productShow--text__bottom  featured-full--text__bottom">
+                          <?= $product->content?>
                         </p>
                      </div>
 
@@ -98,7 +98,7 @@
 
         <div class="card carousel-card" tabindex="0">
            <a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $new->id]) ?>" class="carousel-image">
-              <?= Html::img("@web/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
+              <?= Html::img("@web/img/{$new->image}", ['class' => 'card-img-top', 'alt' => $new->name])?>
               <h5 class="card-title"><?= $new->name?></h5>
            </a>
           <div class="card-body">

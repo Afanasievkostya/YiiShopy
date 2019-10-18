@@ -1113,7 +1113,7 @@ button:not(:disabled) {
 }
 
 .size-product {
-  padding: 0;
+
   max-width: 300px;
 }
 
@@ -1410,6 +1410,11 @@ button:not(:disabled) {
 
 .form-group {
   margin-top: 40px;
+}
+
+.field-product-image {
+  display: flex;
+  flex-direction: column;
 }
 
 .top-user {
@@ -1804,8 +1809,13 @@ footer .navbar-logo .nav-link {
 
   /*   headr  */
   .nav-right {
-    margin-left: 250px;
+    margin-left: 150px;
   }
+
+  .dropdown-menu-right {
+    right: -50px;
+    left: auto;
+}
 
   .navbar {
     padding: 2rem 0;
@@ -2252,6 +2262,28 @@ footer .navbar-logo .nav-link {
 }
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+
+  .navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav-right {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
 
   /*  new-arrivals  */
   .new-arrivals {

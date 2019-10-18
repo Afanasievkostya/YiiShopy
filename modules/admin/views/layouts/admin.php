@@ -101,7 +101,7 @@ AppAsset::register($this);
                           <li class="nav-right--item"><a class="top-user" href="<?= \yii\helpers\Url::to(['/site/logout'])?>"><?= Yii::$app->user->identity['username']?>(Выход)</a>
                           </li>
                       <?php endif;?>
-                     <li class="nav-right--item">
+                     <!--<li class="nav-right--item">
                      <a href="/favourites.php?="><img src="/img/Like.png" alt=""></a>
                       </li>
                      <li class="nav-right--item nav-right--item__prace">
@@ -114,7 +114,7 @@ AppAsset::register($this);
 
                         <a class="top-cart" href="#"><img src="/img/Cart.png" alt="карзина"></a>
 
-                     </li>
+                     </li>-->
                   </ul>
                </div>
             </nav>

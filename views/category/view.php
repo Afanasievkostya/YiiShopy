@@ -55,7 +55,7 @@
                         <div class="card arrivals-card" tabindex="0">
                            <div class="card-face">
                               <div class="card-image">
-                                 <?= Html::img("@web/{$product->image}", ['class' => 'card-img-top', 'alt' => $product->name])?>
+                                 <?= Html::img("@web/img/{$product->image}", ['class' => 'card-img-top', 'alt' => $product->name])?>
                               </div>
                               <div class="card-body">
                                  <h5 class="card-title"><?= $product->name?></h5>
@@ -66,7 +66,7 @@
                            </div>
                            <div class="card-active">
                               <div class="card-image">
-                                 <?= Html::img("@web/{$product->image}", ['class' => 'card-img-top', 'alt' => $product->name])?>
+                                 <?= Html::img("@web/img/{$product->image}", ['class' => 'card-img-top', 'alt' => $product->name])?>
                               </div>
                               <div class="card-title">
                                  <h5 class="card-title--text"><a href="<?= \yii\helpers\Url::to(['product/view', 'id' => $product->id]) ?>"><?= $product->name?></a></h5>
