@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -83,18 +84,31 @@ class ProductController extends Controller
        * @return mixed
        * @throws NotFoundHttpException if the model cannot be found
        */
-      public function actionUpdate($id)
-      {
-          $model = $this->findModel($id);
+       public function actionUpdate($id)
+     {
+         $model = $this->findModel($id);
 
-          if ($model->load(Yii::$app->request->post()) && $model->save()) {
-              return $this->redirect(['view', 'id' => $model->id]);
-          } else {
-              return $this->render('update', [
-                  'model' => $model,
-              ]);
-          }
-      }
+         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+             //для одной картинки
+             $model->image = UploadedFile::getInstance($model, 'image');
+             if( $model->image ){
+                 $model->upload();
+             }
+            // загрузка нескольких картинок
+
+            unset($model->image);
+            $model->gallery = UploadedFile::getInstances($model, 'gallery');
+            $model->uploadGallery();
+
+             Yii::$app->session->setFlash('success', "Товар {$model->name} обновлен");
+             return $this->redirect(['view', 'id' => $model->id]);
+         } else {
+             return $this->render('update', [
+                 'model' => $model,
+             ]);
+         }
+     }
 
     /**
      * Deletes an existing Product model.

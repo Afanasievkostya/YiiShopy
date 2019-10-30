@@ -1412,7 +1412,8 @@ button:not(:disabled) {
   margin-top: 40px;
 }
 
-.field-product-image {
+.field-product-image,
+.field-product-gallery {
   display: flex;
   flex-direction: column;
 }
@@ -2425,6 +2426,12 @@ footer .navbar-logo .nav-link {
   .products .card {
     margin-left: 80px;
     margin-right: 80px;
+  }
+
+  .categories,
+  .size-product,
+  .brand-product {
+    padding-top: 0;
   }
 
   .products .navbar-expand-lg .navbar-nav {

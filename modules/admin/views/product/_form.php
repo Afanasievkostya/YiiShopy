@@ -36,7 +36,9 @@ use mihaildev\ckeditor\CKEditor;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?php //$form->field($model, 'image')->fileInput() ?>
+    <?= $form->field($model, 'image')->fileInput() ?> <!-- для одной картинки-->
+
+     <?= $form->field($model, 'gallery[]')->fileInput(['multiple' => true, 'accept' => 'image/*']) ?> <!-- загрузка нескольких картинок-->
 
     <?= $form->field($model, 'new')->checkbox([ '0', '1', ]) ?>
 

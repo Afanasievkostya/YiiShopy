@@ -1,9 +1,20 @@
 <?php
 
 namespace app\models;
+
 use yii\db\ActiveRecord;
 
 Class Products extends ActiveRecord {
+
+
+  public function behaviors()
+    {
+        return [
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ]
+        ];
+    }
 
     public static function tableName() {
         return 'products';

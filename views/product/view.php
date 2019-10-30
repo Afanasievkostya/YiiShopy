@@ -8,17 +8,24 @@
          <section class="productShow">
             <div class="container">
                <div class="row">
+
+                 <?php
+
+$mainImg = $product->getImage();
+$gallery = $product->getImages();
+?>
                   <div class="col col-sm-12 col-xl-5">
+
                      <div class="gallery-box">
                         <div class="view">
                            <div class="big-image">
-                           <?= Html::img("@web/img/{$product->image}", ['alt' => $products->name])?>
+                           <?= Html::img($mainImg->getUrl(), ['alt' => $product->name])?>
                         </div>
                         <div class="thumbnails">
                            <a href="images/img1.jpg" class="wrap-img"><img src="/img/no-image.png" alt="Product5-2"></a>
                            <a href="images/img2.jpg" class="wrap-img"><img src="/img/no-image.png" alt="Product5-3"></a>
                            <a href="images/img3.jpg" class="wrap-img active">
-                           <?= Html::img("@web/img/{$product->image}", ['alt' => $products->name])?>
+                           <?= Html::img($mainImg->getUrl(), ['alt' => $product->name])?>
                            </a>
                         </div>
                      </div>

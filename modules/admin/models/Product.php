@@ -4,6 +4,7 @@ namespace app\modules\admin\models;
 
 use Yii;
 
+
 /**
  * This is the model class for table "products".
  *
@@ -18,6 +19,18 @@ use Yii;
  */
 class Product extends \yii\db\ActiveRecord
 {
+
+  public $image; // для одной картинки
+  public $gallery; // для несколько картинок
+
+  public function behaviors()
+    {
+        return [
+            'image' => [
+                'class' => 'rico\yii2images\behaviors\ImageBehave',
+            ]
+        ];
+    }
 
     /**
      * {@inheritdoc}
@@ -41,7 +54,9 @@ class Product extends \yii\db\ActiveRecord
             [['category_id'], 'integer'],
             [['price'], 'number'],
             [['new', 'content'], 'string'],
-            [['name', 'keywords', 'description', 'image'], 'string', 'max' => 255],
+            [['name', 'keywords', 'description'], 'string', 'max' => 255],
+            [['image'], 'file', 'extensions' => 'png, jpg'], // для одной картинки
+            [['gallery'], 'file', 'extensions' => 'png, jpg', 'maxFiles' => 3],
         ];
     }
 
@@ -58,9 +73,40 @@ class Product extends \yii\db\ActiveRecord
             'keywords' => 'Ключевые слова',
             'description' => 'Мета-описание',
             'image' => 'Фото',
+            'gallery' => 'Галерея',
             'new' => 'Новинка',
             'content' => 'Контент',
         ];
     }
+
+    // для одной картинки
+
+    public function upload(){
+       if($this->validate()){
+           $path = 'images/store/' . $this->image->baseName . '.' . $this->image->extension;
+           $this->image->saveAs($path);
+           $this->attachImage($path, true);
+           @unlink($path);
+           return true;
+       }else{
+           return false;
+       }
+   }
+
+   // загрузка нескольких картинок
+
+   public function uploadGallery(){
+       if($this->validate()){
+           foreach($this->gallery as $file){
+               $path = 'images/store/' . $file->baseName . '.' . $file->extension;
+               $file->saveAs($path);
+               $this->attachImage($path);
+               @unlink($path);
+           }
+           return true;
+       }else{
+           return false;
+       }
+   }
 
 }
